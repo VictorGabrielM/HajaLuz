@@ -1,0 +1,16 @@
+Emanuel -
+Implementar classe funcionário, e classes de serviços.
+Implementar GetHoraAgora
+
+
+Rafael -
+Implementar método de cadastrar serviço e método de alocar serviço em posição específica;
+Implementar atributo Inadimplente em cliente;
+Implementar regras de ativar e desativar cliente;
+
+
+Victor - 
+Implementar classe sistema
+
+Jão -
+Implementar cliente

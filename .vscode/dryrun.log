@@ -1,0 +1,26 @@
+make all --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/victordev/Projects/HajaLuz '
+g++    -c -o main.o main.cpp
+make: Leaving directory '/home/victordev/Projects/HajaLuz '
+ 
+make: *** No rule to make target 'Cliente.o', needed by 'main'.
+make: *** No rule to make target 'Data.o', needed by 'main'.
+make: *** No rule to make target 'Formato.o', needed by 'main'.
+make: *** No rule to make target 'Excecao.o', needed by 'main'.
+make: *** No rule to make target 'Permissaonegada.o', needed by 'main'.
+make: *** No rule to make target 'Fatura.o', needed by 'main'.
+make: *** No rule to make target 'Eletricista.o', needed by 'main'.
+make: *** No rule to make target 'Funcionario.o', needed by 'main'.
+make: *** No rule to make target 'Leiturista.o', needed by 'main'.
+make: *** No rule to make target 'Endereco.o', needed by 'main'.
+make: *** No rule to make target 'Log.o', needed by 'main'.
+make: *** No rule to make target 'LogAcessoNegado.o', needed by 'main'.
+make: *** No rule to make target 'LogGravacao.o', needed by 'main'.
+make: *** No rule to make target 'LogLeitura.o', needed by 'main'.
+make: *** No rule to make target 'Permissao.o', needed by 'main'.
+make: *** No rule to make target 'DesligamentoEncerramento.o', needed by 'main'.
+make: *** No rule to make target 'DesligamentoInadimplencia.o', needed by 'main'.
+make: *** No rule to make target 'Medicao.o', needed by 'main'.
+make: *** No rule to make target 'NovaLigacao.o', needed by 'main'.
+make: *** No rule to make target 'Religacao.o', needed by 'main'.
+
