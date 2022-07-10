@@ -1,4 +1,5 @@
-#pragma once
+#ifndef UNIDADE_H
+#define UNIDADE_H
 
 #include "../Fatura/Fatura.hpp"
 #include "../Localizacao/Endereco.hpp"
@@ -29,11 +30,12 @@ class UnidadeConsumidora {
     float GetTaxaValor();
     void SetTaxaValor(float);
     std::vector<Fatura> getFaturas();//TO DO
-    void setFaturas(std::map<std::string,Fatura>);
+    void setFaturas(std::vector<Fatura>);
     bool PagarFatura(std::string);
     bool Inadimplente();
     void AdicionarFatura(Fatura);
-    std::map<std::string,Fatura> ExibirFaturas();
+    std::vector<Fatura> ExibirFaturas();
+    Fatura* GetPtrFatura(std::string _codBarras);
   protected:
     std::vector<Fatura> Faturas;
 
@@ -51,4 +53,4 @@ class UnidadeConsumidora {
 
 };
 
-
+#endif

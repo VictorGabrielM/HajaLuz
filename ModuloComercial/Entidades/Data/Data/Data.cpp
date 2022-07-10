@@ -137,7 +137,7 @@ Data::~Data(){}
 
 //Operadores:
 
-bool Data::operator==(Data &d2)
+/*bool Data::operator==(Data &d2)
 {
 	return ((ano == d2.ano)&&(mes == d2.mes)&&(dia == d2.dia)&&(hora == d2.hora)&&
            (minuto == d2.minuto)&&(segundo == d2.segundo)||(ticks == d2.ticks));
@@ -149,9 +149,14 @@ bool Data::operator<(Data &d2)
            (ano==d2.ano && mes==d2.mes && dia==d2.dia && hora<d2.hora)||(ano==d2.ano && mes==d2.mes&&
            dia==d2.dia && hora==d2.hora && minuto<d2.minuto)||(ano==d2.ano && mes==d2.mes && dia==d2.dia &&
            hora==d2.hora && minuto==d2.minuto && segundo<d2.segundo));
-}
+}*/
 
-bool Data::operator>(Data &d2)
+
+
+
+
+
+/*bool Data::operator>(Data &d2)
 {
     return !((ano<d2.ano)||(ano==d2.ano && mes<d2.mes)||(ano==d2.ano && mes==d2.mes && dia<d2.dia)||
 	       (ano==d2.ano && mes==d2.mes && dia==d2.dia && hora<d2.hora)||(ano==d2.ano && mes==d2.mes&&
@@ -167,7 +172,7 @@ Data Data::operator-(Data &d2)
     else
         return aux;
 }
-
+*/
 //Metodos get:
 
 int Data::getAno()

@@ -2,7 +2,7 @@
 #include <string>
 #include "Eletricista.hpp"
 
-Eletricista::Eletricista(std::string _nome, std::string _cpf, std::string _chapa, int _status,std::string _telefone){
+Eletricista::Eletricista(std::string _nome, std::string _cpf, double _chapa, int _status,std::string _telefone){
   this->nome = _nome;
   this->cpfCnpj = _cpf;
   this->telefone = _telefone;

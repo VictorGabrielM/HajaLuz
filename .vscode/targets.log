@@ -2,28 +2,50 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'main.o', needed by 'main'.  Stop.
 
 # GNU Make 4.3
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
+ 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
+ 
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sun Jul 10 11:35:42 2022
+ 
+# Make data base, printed on Sun Jul 10 15:57:45 2022
+ 
 
 # Variables
+ 
 
+ 
 # environment
+ 
 GDK_BACKEND = x11
+ 
 # environment
+ 
 LC_ALL = C
+ 
 # environment
+ 
 GNOME_SHELL_SESSION_MODE = ubuntu
+ 
 # environment
+ 
 SSH_AGENT_LAUNCHER = gnome-keyring
+ 
 # environment
+ 
 GJS_DEBUG_OUTPUT = stderr
+ 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1021c594-7226-4dc5-af74-3b37adca2dd7.sock
+ 
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-174f5236-91e0-41af-a718-502a97b2103f.sock
+ 
 # environment
 LC_NAME = pt_BR.UTF-8
 # environment
@@ -99,7 +121,7 @@ CONDA_SHLVL = 0
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 37709
+VSCODE_PID = 96771
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -195,7 +217,7 @@ MANAGERPID = 1699
 # environment
 LC_MEASUREMENT = pt_BR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 37709
+GIO_LAUNCHED_DESKTOP_FILE_PID = 96771
 # environment
 _ = /usr/share/code/code
 # environment
@@ -249,9 +271,9 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 
 # Directories
 
-# . (device 66307, inode 3671185): 7 files, no impossibilities.
+# . (device 66307, inode 3671185): 8 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,7 +303,6 @@ LogAcessoNegado.o:
 Makefile:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-09 18:31:55.175425802
- 
 #  File has been updated.
 #  Successfully updated.
 
@@ -304,7 +325,9 @@ DesligamentoInadimplencia.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 Permissaonegada.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -418,12 +441,12 @@ Religacao.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 395 B / avg = 11 B
-# current buf: size = 8162 B / used = 395 B / count = 34 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 400 B / avg = 11 B
+# current buf: size = 8162 B / used = 400 B / count = 35 / avg = 11 B
 
-# strcache performance: lookups = 42 / hit rate = 19%
+# strcache performance: lookups = 43 / hit rate = 18%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=0/42=0%
-# Finished Make data base on Sun Jul 10 11:35:42 2022
+# Load=35/8192=0%, Rehash=0, Collisions=0/43=0%
+# Finished Make data base on Sun Jul 10 15:57:45 2022
 
  

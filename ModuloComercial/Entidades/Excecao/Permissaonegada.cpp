@@ -31,5 +31,5 @@ std::string PermissaoNegada::GetFuncao(){
 
 
 void PermissaoNegada::GerarLog(){
-  Sistema::AttLog("LogAcessoNegado",this->GetUsuario(), this->GetFuncao(), this->GetEntidade(), "","");
+  //Sistema::AttLog("LogAcessoNegado",this->GetUsuario(), this->GetFuncao(), this->GetEntidade(), "","");
 }

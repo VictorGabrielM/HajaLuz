@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PERMISSAONEGADA_H
+#define PERMISSAONEGADA_H
 
 #include "Excecao.hpp"
 
@@ -22,3 +23,5 @@ class PermissaoNegada : public Excecao{
     PermissaoNegada();
 
 };
+
+#endif

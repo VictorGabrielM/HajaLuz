@@ -1,20 +1,22 @@
-#pragma once
+#ifndef PERMISSAO_H
+#define PERMISSAO_H
 
 #include <iostream>
-#include <set>
+#include <vector>
 #include <string>
 
 class Permissao{
   private:
     int ID;
   public:
+    int getID();
     Permissao(int);  
     Permissao();
 };
 
 class Permissoes{
   private:
-    std::set<Permissao> ArrayPermissoes;
+    std::vector<Permissao> ArrayPermissoes;
     std::string usuario;
   public:
     bool Possui(int);
@@ -36,3 +38,4 @@ class Permissoes{
    ID 7 : Sistema
 */
 
+#endif

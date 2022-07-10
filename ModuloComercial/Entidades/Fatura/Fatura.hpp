@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FATURA_H
+#define FATURA_H
 
 #include "../Data/Data/Data.hpp"
 
@@ -32,3 +33,4 @@ class Fatura {
 
 };
 
+#endif

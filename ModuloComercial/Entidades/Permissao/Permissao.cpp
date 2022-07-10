@@ -6,6 +6,10 @@ Permissao::Permissao(int _ID){
   
 }
 
+int Permissao::getID(){
+  return this->ID;
+}
+
 Permissoes::Permissoes(std::string _usuario){
 
   this->usuario=_usuario;
@@ -16,19 +20,19 @@ Permissoes::Permissoes(std::string _usuario){
 bool Permissoes::AdicionarPermissao(int _ID){
   if(!this->Possui(_ID)){
     Permissao it = Permissao(_ID);
-    this->ArrayPermissoes.insert(it);
+    this->ArrayPermissoes.push_back(it);
     return 1;
   }
   else{
     return 0;
-    }
+  }
 }
 
 bool Permissoes::RetirarPermissao(int 
 _ID ){
   if(this->Possui(_ID)){
     Permissao it = Permissao(_ID);
-    this->ArrayPermissoes.erase(it);
+    this->ArrayPermissoes.push_back(it);
     return 1;
   }
   else{
@@ -37,13 +41,12 @@ _ID ){
 }
 
 bool Permissoes::Possui(int _ID){
-  Permissao it = Permissao(_ID);
-  if(this->ArrayPermissoes.count(it)!=0){
-    return 1;
+  for(auto itP : ArrayPermissoes){
+    if(itP.getID() == _ID ){
+      return true;
+    }
   }
-  else{
-    return 0;
-  }
+  return false;
 }
 
 std::string Permissoes::GetUsuario(){
@@ -57,6 +60,7 @@ void Permissoes::SetUSusario(std::string _usuario){
   this->usuario=_usuario;
   
 }
+
 
 
 /* ID 1 : Usuario padrão

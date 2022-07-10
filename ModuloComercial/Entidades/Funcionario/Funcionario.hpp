@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
 
 #include "../Servico/Servico.hpp"
 #include "../Cliente/Cliente.hpp"
@@ -23,3 +24,5 @@ class Funcionario: public Usuario{
     std::string ConcluirServico(Data, Permissoes);
     bool EstaDisponivel(Permissoes);
 };
+
+#endif

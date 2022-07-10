@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SERVICO_H
+#define SERVICO_H
 
 #include "../Cliente/Cliente.hpp"
 #include "../Data/Data/Data.hpp"
@@ -20,4 +21,4 @@ class Servico{
   Servico();
 };
 
-
+#endif

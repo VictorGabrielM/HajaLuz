@@ -1,4 +1,5 @@
-#pragma once
+#ifndef NOVA_LIGACAO_H
+#define NOVA_LIGACAO_H
 
 #include "../Servico.hpp"
 
@@ -10,3 +11,5 @@ class NovaLigacao : public Servico{
     NovaLigacao();
   
 };
+
+#endif

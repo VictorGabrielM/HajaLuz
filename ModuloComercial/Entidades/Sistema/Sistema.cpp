@@ -1,7 +1,13 @@
 #include "Sistema.hpp"
 
-
-
+//Inicializando atributos estaticos
+std::vector<Cliente> Sistema::Clientes;
+std::vector<Cliente> Sistema::ClientesLogados;
+std::vector<Funcionario> Sistema::Funcionarios;
+std::vector<Funcionario> Sistema::FuncionariosLogados;
+std::vector<Log> Sistema::Logs;
+std::vector<Excecao> Sistema::Excecoes;
+Permissoes Sistema::PermSystem;
 
 
 std::vector<Cliente> Sistema::ExibirInadimplentes(){
@@ -213,7 +219,7 @@ void Sistema::ExcluirCliente(std::string _cpf_cnpj){
   }
 }
 
-void Sistema::RegistrarFuncionario(std::string _nome, std::string _cpf, std::string _chapa, int _funcao,int _status, std::string _telefone){
+void Sistema::RegistrarFuncionario(std::string _nome, std::string _cpf, double _chapa, int _funcao,int _status, std::string _telefone){
   if(Sistema::ValidarCPF(_cpf) && _funcao == 0){              //Funcoes indices: 0 -> Eletricista 
     Eletricista e(_nome,_cpf,_chapa,_status,_telefone);                       // 1 -> Leiturista    
     Funcionarios.push_back(e);

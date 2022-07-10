@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TROCA_MEDIDOR_H
+#define TROCA_MEDIDOR_H
 
 #include "../Servico.hpp"
 
@@ -12,3 +13,4 @@ class TrocaMedidor : public Servico{
   
 };
 
+#endif

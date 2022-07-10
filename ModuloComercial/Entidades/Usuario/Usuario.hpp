@@ -1,4 +1,5 @@
-#pragma once
+#ifndef USUARIO_H
+#define USUARIO_H
 
 #include <iostream>
 #include "../Permissao/Permissao.hpp"
@@ -16,4 +17,4 @@ class Usuario{
 
 };
 
-
+#endif

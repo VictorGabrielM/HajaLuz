@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DES_ENC_H
+#define DES_ENC_H
 
 #include <string>
 #include "../Servico.hpp"
@@ -11,3 +12,4 @@ class DesligamentoEncerramento : public Servico{
   DesligamentoEncerramento();
 };
 
+#endif

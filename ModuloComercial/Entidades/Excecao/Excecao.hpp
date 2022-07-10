@@ -1,7 +1,8 @@
-#pragma once
+#ifndef EXCECAO_H
+#define EXCECAO_H
 
 #include <iostream>
-#include "../Sistema/Sistema.hpp"
+#include "../Data/Data/Data.hpp"
 
 class Excecao{
   private:
@@ -18,3 +19,5 @@ class Excecao{
     void Exibir();
     Excecao();
 };
+
+#endif

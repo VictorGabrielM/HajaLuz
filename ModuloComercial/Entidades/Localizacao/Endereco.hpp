@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ENDERECO_H
+#define ENDERECO_H
 
 #include "Localizacao.hpp"
 
@@ -35,3 +36,4 @@ class Endereco : public LocalizacaoGeografica {
     void SetEstado(std::string);
 };
 
+#endif

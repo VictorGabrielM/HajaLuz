@@ -32,10 +32,16 @@ public:
     Data(int valAno, int valMes, int valDia, int valHora, int valMin, int valSeg);      //Construtor com argumentos e formato default
     Data(long valTicks);        //Construtor a partir de ticks
     virtual ~Data();        //Destrutor
-    bool operator==(Data &d2);       //Sobrecarga do operador de comparacao eq
-    bool operator<(Data &d2);        //Sobrecarga do operador de comparacao lt
-    bool operator>(Data &d2);        //Sobrecarga do operator de comparacao gt
-    Data operator-(Data &d2);         //Sobrecarga do operador de subtracao
+    friend bool operator==(const Data& l,const Data& r){
+        return ((l.ano < r.ano) && (l.mes == r.mes) && (l.dia == r.dia) && (l.hora == r.hora) && (l.minuto == r.minuto) && (l.segundo == r.segundo) ); 
+    }      //Sobrecarga do operador de comparacao eq
+    friend bool operator<(const Data& l, const Data& r){
+        return ((l.ano < r.ano) || (l.mes < r.mes) || (l.dia < r.dia) || (l.hora < r.hora) || (l.minuto < r.minuto) || (l.segundo < r.segundo) );
+    }
+    friend bool operator>(const Data& l, const Data& r){
+        return r < l;
+    }       //Sobrecarga do operator de comparacao gt
+    //friend Data operator-(Data &d2);         //Sobrecarga do operador de subtracao
 
     //Metodos get:
     int getAno();
@@ -63,5 +69,7 @@ public:
     string getData();       //Retorna a data no formato de string
     int diffData(Data);    // Retorna a diferenÃ§a entre duas datas em dias
 };
+
+
 
 #endif // DATA_H_INCLUDED

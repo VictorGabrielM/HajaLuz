@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LOCALIZACAO_H
+#define LOCALIZACAO_H
 
 #include <iostream>
 
@@ -10,3 +11,5 @@ class LocalizacaoGeografica{
     LocalizacaoGeografica();
 
 };
+
+#endif

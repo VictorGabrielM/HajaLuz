@@ -9,30 +9,44 @@
 
 std::set<std::string> allCodBarras;
 
-std::map<std::string,Fatura> UnidadeConsumidora::ExibirFaturas(){
+Fatura* UnidadeConsumidora::GetPtrFatura(std::string _codBarras){
+  Fatura* F;
+  int i = 0;
+  for(auto itF : Faturas){
+    if(itF.GetCodBarras() == _codBarras){
+        F = &Faturas[i];
+      }
+    i++;  
+  }
+  return F;
+}
+
+std::vector<Fatura> UnidadeConsumidora::ExibirFaturas(){
   return this->Faturas;
 }
 
 bool UnidadeConsumidora::PagarFatura(std::string _chave){
-  return this->Faturas[_chave].PagarFatura();
+  return this->GetPtrFatura(_chave)->PagarFatura();
 }
 
 void UnidadeConsumidora::CadastrarFatura(){
+  std::string codBarras=this->GerarCodBarras();
+
+  Fatura F(codBarras,this->taxaValor,this->horasUsadas,this->ultimaMedicao);
   if(this->GetRecebeEnergia()==1){
-    std::string codBarras=this->GerarCodBarras();
-    this->Faturas.emplace(codBarras,Fatura(codBarras,this->taxaValor, this->horasUsadas, this->ultimaMedicao));
+    this->Faturas.push_back(F);
   }
 }
 
 void UnidadeConsumidora::AdicionarFatura(Fatura _fatura){
   if(this->GetRecebeEnergia()==1){
-    this->Faturas.emplace(_fatura.GetCodBarras(),_fatura);
+    this->Faturas.push_back(_fatura);
   }
 }
 
 bool UnidadeConsumidora::Inadimplente(){
   for(auto itF=this->Faturas.begin(); itF!=this->Faturas.end(); itF++ ){
-    if(itF->second.GetAtrasada()==1){
+    if(itF->GetAtrasada()==1){
       return 1;
     }
     else{
@@ -133,7 +147,7 @@ void UnidadeConsumidora::SetTaxaValor(float _taxaValor){
   this->ultimaMedicao=_taxaValor;
 }
 
-void UnidadeConsumidora::setFaturas(std::map<std::string,Fatura> _Faturas){
+void UnidadeConsumidora::setFaturas(std::vector<Fatura> _Faturas){
   this->Faturas = _Faturas;
 }
 

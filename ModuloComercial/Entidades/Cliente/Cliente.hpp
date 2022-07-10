@@ -1,11 +1,10 @@
-#pragma once
+#ifndef CLIENTE_H
+#define CLIENTE_H
 
 #include "../Unidade/Unidade.hpp"
-#include "../Sistema/Sistema.hpp"
 #include "../Localizacao/Endereco.hpp"
 #include "../Permissao/Permissao.hpp"
 #include "../Usuario/Usuario.hpp"
-#include <set>
 #include <iostream>
 
 class Cliente : public Usuario {
@@ -33,7 +32,7 @@ class Cliente : public Usuario {
     void SetStatus(int, Permissoes);
     std::string GetNumeroTel(Permissoes);
     void SetNumeroTel(std::string, Permissoes);
-    UnidadeConsumidora* Cliente::GetPtrUC(Endereco);
+    UnidadeConsumidora* GetPtrUC(Endereco);
     std::vector<UnidadeConsumidora> getUnidadesConsumidoras(Permissoes);
     void setUnidadesConsumidoras(std::vector<UnidadeConsumidora>, Permissoes);
     void SetEndereco(Endereco, Permissoes);
@@ -52,3 +51,4 @@ class Cliente : public Usuario {
     void AtivarUC(Endereco, Permissoes);
 };
 
+#endif

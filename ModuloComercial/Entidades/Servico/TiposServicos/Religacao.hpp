@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RELIGACAO_H
+#define RELIGACAO_H
 
 #include "../Servico.hpp"
 
@@ -11,3 +12,4 @@ class Religacao : public Servico{
   
 };
 
+#endif

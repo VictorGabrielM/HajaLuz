@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MEDICAO_H
+#define MEDICAO_H
 
 #include "../Servico.hpp"
 
@@ -11,3 +12,4 @@ class Medicao : public Servico{
   
 };
 
+#endif
