@@ -33,8 +33,9 @@ class Cliente : public Usuario {
     void SetStatus(int, Permissoes);
     std::string GetNumeroTel(Permissoes);
     void SetNumeroTel(std::string, Permissoes);
+    UnidadeConsumidora* Cliente::GetPtrUC(Endereco);
     std::vector<UnidadeConsumidora> getUnidadesConsumidoras(Permissoes);
-    void setUnidadesConsumidoras(std::map<Endereco,UnidadeConsumidora>, Permissoes);
+    void setUnidadesConsumidoras(std::vector<UnidadeConsumidora>, Permissoes);
     void SetEndereco(Endereco, Permissoes);
     Endereco GetEndereco(Permissoes);
     void SetUltimaMedicao(Endereco, float, Permissoes);

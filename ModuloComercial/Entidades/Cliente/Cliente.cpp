@@ -15,9 +15,10 @@ Cliente::Cliente(std::string _nome, int _status, std::string _telefone, std::str
 }
 
 std::string Cliente::CadastrarUC(std::string _tipo,Endereco _endereco, Permissoes _permissoes){
+  UnidadeConsumidora UC(_tipo,_endereco);
   if(this->isPf){
     if(_tipo=="residencial"){
-      UnidadesConsumidoras.emplace(_endereco, new UnidadeConsumidora(_tipo, _endereco));
+      UnidadesConsumidoras.push_back(UC);
     }
     else{
       return "Cliente sem acesso a este tipo de cadastro";
@@ -25,7 +26,7 @@ std::string Cliente::CadastrarUC(std::string _tipo,Endereco _endereco, Permissoe
   }
   else if(!this->isPf){
     if(_tipo=="comercial" || _tipo=="publica" || _tipo=="industrial"){
-      UnidadesConsumidoras.emplace(_endereco,new UnidadeConsumidora(_tipo, _endereco));
+      UnidadesConsumidoras.push_back(UC);
     }
     else{
       return "Cliente sem acesso a este tipo de cadastro";
@@ -34,7 +35,7 @@ std::string Cliente::CadastrarUC(std::string _tipo,Endereco _endereco, Permissoe
 }
 bool Cliente::GetInadimplente(Permissoes _permissoes){
   for(auto itUC=this->UnidadesConsumidoras.begin(); itUC!=this->UnidadesConsumidoras.end(); itUC++ ){
-    if(itUC->second.Inadimplente()==1){
+    if(itUC->Inadimplente()==1){
       return 1;
     }
     else{
@@ -45,25 +46,38 @@ bool Cliente::GetInadimplente(Permissoes _permissoes){
 }
 
 void Cliente::DesativarUC(Endereco _chave, Permissoes _permissoes){
-  this->UnidadesConsumidoras[_chave].SetStatus(0);
+  this->GetPtrUC(_chave)->SetStatus(0);
 }
 
 void Cliente::AtivarUC(Endereco _chave, Permissoes _permissoes){
-  this->UnidadesConsumidoras[_chave].SetStatus(1);
+  this->GetPtrUC(_chave)->SetStatus(1);
 }
 
-std::map<Endereco,UnidadeConsumidora> Cliente::ExibirUCs(Permissoes _permissoes){
+std::vector<UnidadeConsumidora> Cliente::ExibirUCs(Permissoes _permissoes){
   return this->UnidadesConsumidoras;
 }
 
 void Cliente::AdicionarFatura(Endereco _endereco, Permissoes _permissoes){
   this->qtdFaturasNaoPagas++;
   //Futuramente criar servico
-  UnidadesConsumidoras[_endereco].CadastrarFatura();
+  this->GetPtrUC(_endereco)->CadastrarFatura();
+}
+
+UnidadeConsumidora* Cliente::GetPtrUC(Endereco _endereco){
+  UnidadeConsumidora* UC;
+  int i = 0;
+  for(auto itUC : UnidadesConsumidoras){
+    if(itUC.GetEndereco().GetCep() == _endereco.GetCep() &&
+       itUC.GetEndereco().GetNumero() == _endereco.GetNumero()){
+        UC = &UnidadesConsumidoras[i];
+      }
+    i++;  
+  }
+  return UC;
 }
 
 std::string Cliente::PagarFatura(Endereco _endereco, std::string _codBarras, Permissoes _permissoes){
-  if(this->UnidadesConsumidoras[_endereco].PagarFatura(_codBarras)){
+  if(this->GetPtrUC(_endereco)->PagarFatura(_codBarras)){
     this->qtdFaturasNaoPagas--;
     return "Fatura paga com sucesso";
   }
@@ -116,18 +130,18 @@ Endereco Cliente::GetEndereco(Permissoes _permissoes){
 }
 
 void Cliente::SetGastoMesAtual(Endereco _endereco, float _valorRegistro, Permissoes _permissoes){
-  this->UnidadesConsumidoras[_endereco].SetGastoMesAtual(_valorRegistro - this->UnidadesConsumidoras[_endereco].GetUltimaMedicao());
+  this->GetPtrUC(_endereco)->SetGastoMesAtual(_valorRegistro - this->GetPtrUC(_endereco)->GetUltimaMedicao());
 }
 
 void Cliente::SetUltimaMedicao(Endereco _endereco, float _valorRegistro, Permissoes _permissoes){
-  this->UnidadesConsumidoras[_endereco].SetUltimaMedicao(_valorRegistro);
+  this->GetPtrUC(_endereco)->SetUltimaMedicao(_valorRegistro);
 }
 
 void Cliente::IncrementaQtdFaturasNPagas(Permissoes _permissoes){
   this->qtdFaturasNaoPagas ++;
 }
 
-void Cliente::setUnidadesConsumidoras(std::map<Endereco,UnidadeConsumidora> _UnidadesConsumidoras, Permissoes _permissoes){
+void Cliente::setUnidadesConsumidoras(std::vector<UnidadeConsumidora> _UnidadesConsumidoras, Permissoes _permissoes){
   this->UnidadesConsumidoras = _UnidadesConsumidoras;
 }
 

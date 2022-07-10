@@ -314,27 +314,59 @@ void Sistema::GerarLog(){
 
 
 int Sistema::BuscaCliente(std::string _CPF){
-  return Clientes.count(_CPF);
+  int i = 0;
+
+  for(auto itC : Clientes){
+    if(itC.GetCpfCnpj(itC.PermUser) == _CPF){
+      i++;
+      break;
+    }
+  }
+
+  return i;
 }
   
   
 int Sistema::BuscaClienteLogado(std::string _CPF){
-
-  return ClientesLogados.count(_CPF);
+  int i = 0;
   
+  for(auto itC : ClientesLogados){
+    if(itC.GetCpfCnpj(itC.PermUser) == _CPF){
+      i++;
+      break;
+    }
+  }
+  
+  return i;
 }
 
 
 int Sistema::BuscaFuncionario(double _chapa){
 
-  return Funcionarios.count(_chapa);
+  int i = 0;
   
+  for(auto itF : Funcionarios){
+    if(itF.GetChapa() == _chapa){
+      i++;
+      break;
+    }
+  }
+  
+  return i;
 }
 
   
 int Sistema::BuscaFuncionarioLogado(double _chapa){
-
-  return FuncionariosLogados.count(_chapa);
+  int i = 0;
+  
+  for(auto itF : FuncionariosLogados){
+    if(itF.GetChapa() == _chapa){
+      i++;
+      break;
+    }
+  }
+  
+  return i;
   
 }
   
@@ -350,7 +382,7 @@ void Sistema::LogarCliente(std::string _CPF){
     }
     else{
       
-      ClientesLogados.emplace(_CPF,Clientes[_CPF]);
+      ClientesLogados.push_back(*GetPtrCliente(_CPF));
       
     }
     
@@ -375,7 +407,7 @@ void Sistema::LogarFuncionario(double _chapa){
     }
     else{
       
-      FuncionariosLogados.emplace(_chapa,Funcionarios[_chapa]);
+      FuncionariosLogados.push_back(*GetPtrFuncionario(_chapa));
       
     }
     
@@ -390,7 +422,7 @@ void Sistema::LogarFuncionario(double _chapa){
 
   
 void Sistema::DeslogarCliente(std::string _CPF){
-
+  std::vector<Cliente>::iterator itC = ClientesLogados.begin();
   if( BuscaCliente(_CPF) > 0 ){
 
     if( BuscaClienteLogado(_CPF) <= 0 ){
@@ -400,7 +432,12 @@ void Sistema::DeslogarCliente(std::string _CPF){
     }
     else{
       
-      ClientesLogados.erase(_CPF);
+      for(;itC != ClientesLogados.end();itC++){
+        if(itC->GetCpfCnpj(itC->PermUser) == _CPF){
+          ClientesLogados.erase(itC);
+          break;
+        }
+      }
       
     }
     
@@ -415,7 +452,7 @@ void Sistema::DeslogarCliente(std::string _CPF){
 
   
 void Sistema::DeslogarFuncionario(double _chapa){
-
+  std::vector<Funcionario>::iterator itF = FuncionariosLogados.begin();
   if( BuscaFuncionario(_chapa) > 0 ){
 
     if( BuscaFuncionarioLogado(_chapa) <= 0 ){
@@ -425,7 +462,12 @@ void Sistema::DeslogarFuncionario(double _chapa){
     }
     else{
       
-      FuncionariosLogados.erase(_chapa);
+      for(;itF != FuncionariosLogados.end();itF++){
+        if(itF->GetChapa() == _chapa){
+          FuncionariosLogados.erase(itF);
+          break;
+        }
+      }
       
     }
     
