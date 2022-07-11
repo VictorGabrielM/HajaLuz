@@ -20,6 +20,6 @@ class LogGravacao : public Log{
     std::string GetValorAlterado();
     LogGravacao( std::string, std::string, std::string, std::string, std::string, Data);
     void ExibirLog();
-    LogGravacao();
+    LogGravacao(){};
 
 };

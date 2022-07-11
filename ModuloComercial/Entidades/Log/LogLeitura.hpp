@@ -16,6 +16,6 @@ class LogLeitura : public Log{
     std::string GetAtributo();
     LogLeitura( std::string, std::string, std::string, Data);
     void ExibirLog();
-    LogLeitura();
+    LogLeitura(){};
   
 };

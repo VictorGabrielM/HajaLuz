@@ -17,11 +17,7 @@ Permissoes::Permissoes(std::string _usuario){
   
 }
 
-Permissoes::Permissoes(){
 
-  this->usuario = "Jorge";
-  this->AdicionarPermissao(1);
-}
 
 bool Permissoes::AdicionarPermissao(int _ID){
   if(!this->Possui(_ID)){

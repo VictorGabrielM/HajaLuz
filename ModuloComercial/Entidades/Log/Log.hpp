@@ -18,6 +18,6 @@ class Log{
     Data GetData();
     Log(std::string, Data);
     std::string ExibirLog();
-    Log();
+    Log(){};
   
 };

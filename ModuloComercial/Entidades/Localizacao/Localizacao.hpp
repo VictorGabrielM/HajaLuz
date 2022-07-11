@@ -8,7 +8,7 @@ class LocalizacaoGeografica{
     std::string latitude;
     std::string longitude;
   public:
-    LocalizacaoGeografica();
+    LocalizacaoGeografica(){};
 
 };
 

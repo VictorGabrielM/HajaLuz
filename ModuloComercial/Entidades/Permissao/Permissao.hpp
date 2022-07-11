@@ -23,7 +23,7 @@ class Permissoes{
     bool AdicionarPermissao(int);
     bool RetirarPermissao(int);
     Permissoes(std::string);
-    Permissoes();
+    Permissoes(){};
     std::string GetUsuario();
     void SetUSusario(std::string);
   

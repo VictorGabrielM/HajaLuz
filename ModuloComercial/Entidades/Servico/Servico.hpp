@@ -18,7 +18,7 @@ class Servico{
   bool getCompleto(){
     return this->completo;
   }
-  Servico();
+  Servico(){};
   ~Servico();
 };
 

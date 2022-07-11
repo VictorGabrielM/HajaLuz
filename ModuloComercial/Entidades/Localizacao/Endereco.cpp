@@ -12,16 +12,7 @@ Endereco::Endereco(std::string _logradouro, int _numero, std::string _bairro, st
   estado = _estado;   
 }
 
-Endereco::Endereco(){
 
-  logradouro = "logradouro";
-  numero = 1234;
-  bairro = "bairro";
-  complemento = "complemento";
-  cep = 12345678;
-  cidade = "cidade";
-  estado = "estado";
-}
 
 std::string Endereco::GetLogradouro(){
   return this->logradouro;

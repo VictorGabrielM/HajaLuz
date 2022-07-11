@@ -8,7 +8,7 @@ class Medicao : public Servico{
     Medicao(Endereco endereco,Cliente *_cliente,std::string tipoUC);
     std::string RegistraConsumo(Endereco endereco,Cliente &_cliente, float _novaMedicao);
     std::string FinalizaServico() override;
-    Medicao();
+    Medicao(){};
   
 };
 

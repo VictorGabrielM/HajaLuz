@@ -18,7 +18,7 @@ class Endereco : public LocalizacaoGeografica {
   public:
 
     Endereco(std::string, int, std::string, std::string, int, std::string, std::string);
-    Endereco();
+    Endereco(){};
 
     std::string GetLogradouro();
     void SetLogradouro(std::string);

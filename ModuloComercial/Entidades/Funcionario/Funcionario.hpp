@@ -16,7 +16,7 @@ class Funcionario: public Usuario{
     int nivelTreinamento;
     std::string capacitacao;
   public:
-    Funcionario();
+    Funcionario(){};
     double GetChapa();
     std::vector<Servico> VerServicos(Permissoes);
     std::string InserirServico(Data, Servico, Permissoes);

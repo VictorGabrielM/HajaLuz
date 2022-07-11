@@ -10,7 +10,7 @@ class UnidadeConsumidora {
 
   public:
     UnidadeConsumidora(std::string, Endereco);
-    UnidadeConsumidora();
+    UnidadeConsumidora(){};
     void CadastrarFatura();
     std::string GetTipo();
     void SetTipo(std::string);

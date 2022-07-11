@@ -20,7 +20,7 @@ class PermissaoNegada : public Excecao{
     std::string GetFuncao();
     void GerarLog();
     PermissaoNegada(int,int,std::string,std::string);
-    PermissaoNegada();
+    PermissaoNegada(){};
 
 };
 

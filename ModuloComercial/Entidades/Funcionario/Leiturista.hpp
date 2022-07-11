@@ -6,7 +6,7 @@
 class Leiturista : public Funcionario{
   public:
     Leiturista(std::string _nome, std::string _cpf, double _chapa, int _status,std::string _telefone);
-    Leiturista();
+    Leiturista(){};
 };  
 
 #endif

@@ -15,9 +15,7 @@ Fatura::Fatura(std::string _codBarras, float _taxaValor, float _horasUsadas, flo
     
 }   
 
-Fatura::Fatura(){
-  
-}
+
 
 void Fatura::CalculaJuros(float taxa, Data dataAtual){
   int dias = dataAtual.diffData(this->vencimento);

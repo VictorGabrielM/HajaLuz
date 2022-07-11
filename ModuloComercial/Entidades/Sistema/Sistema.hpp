@@ -40,6 +40,7 @@ private:
   static Permissoes PermSystem;
 
 public:
+  Sistema(){};
   static std::vector<Cliente> ExibirInadimplentes();
   static void CriarServicoManual(Endereco endereco, double chapaFuncionario, std::string cpf_cnpjCliente, int tipoServico, std::string tipoUC);
   static void DesligamentoInadimplencia(Endereco endereco, std::string cpf_cnpjCliente); // Esse Servico é criado automaticamente quando o cliente atinge faturas x nao pagas

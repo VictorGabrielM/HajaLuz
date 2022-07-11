@@ -9,6 +9,7 @@ class Usuario{
     Permissoes PermUser;
     //Usuario();
   protected:
+    Usuario(){};
     std::string nome;
     int status;
     std::string telefone;

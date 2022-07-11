@@ -9,7 +9,7 @@ class TrocaMedidor : public Servico{
   public:
     TrocaMedidor(Endereco endereco,Cliente *_cliente,std::string tipoUC);
     std::string FinalizaServico() override;
-    TrocaMedidor();
+    TrocaMedidor(){};
   
 };
 

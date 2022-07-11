@@ -29,7 +29,7 @@ class Fatura {
     float GetConsumo();
     void SetConsumo(float);
     Fatura(std::string, float, float, float);  
-    Fatura();
+    Fatura(){};
 
 };
 

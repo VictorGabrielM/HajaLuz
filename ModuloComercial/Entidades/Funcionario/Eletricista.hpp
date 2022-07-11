@@ -6,7 +6,7 @@
 class Eletricista : public Funcionario{
   public:
     Eletricista(std::string _nome, std::string _cpf, double _chapa, int _status,std::string _telefone);
-    Eletricista();
+    Eletricista(){};
 };
 
 #endif

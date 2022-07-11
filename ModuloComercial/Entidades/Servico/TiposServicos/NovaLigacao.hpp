@@ -8,7 +8,7 @@ class NovaLigacao : public Servico{
   public:
     NovaLigacao(Endereco endereco,Cliente *_cliente,std::string tipoUC);
     std::string FinalizaServico() override;
-    NovaLigacao();
+    NovaLigacao(){};
   
 };
 

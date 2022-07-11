@@ -20,7 +20,7 @@ class Cliente : public Usuario {
 
   public:
     Cliente(std::string _nome,int _status, std::string _telefone, std::string _cpfOuCnpj, bool _isPf, Endereco _endereco);
-    Cliente();
+    Cliente(){};
     std::string GetNome(Permissoes);
     void SetNome(std::string, Permissoes);
     bool GetInadimplente(Permissoes);

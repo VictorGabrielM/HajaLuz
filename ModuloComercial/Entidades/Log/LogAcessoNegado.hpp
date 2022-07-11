@@ -13,7 +13,7 @@ class LogAcessoNegado : public Log{
     std::string GetFuncao();
     LogAcessoNegado( std::string, std::string, std::string, Data);
     void ExibirLog();
-    LogAcessoNegado();
+    LogAcessoNegado(){};
 
 };
 

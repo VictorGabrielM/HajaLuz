@@ -17,7 +17,7 @@ class Excecao{
     std::string GetDescricao();
     std::string GetUsuario();
     void Exibir();
-    Excecao();
+    Excecao(){};
 };
 
 #endif

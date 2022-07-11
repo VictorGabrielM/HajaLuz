@@ -9,7 +9,7 @@ class DesligamentoEncerramento : public Servico{
   public:
   DesligamentoEncerramento(Endereco endereco,Cliente* cliente,std::string tipoUC);
   std::string FinalizaServico() override;
-  DesligamentoEncerramento();
+  DesligamentoEncerramento(){};
 };
 
 #endif
