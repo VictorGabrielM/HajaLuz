@@ -19,6 +19,7 @@ class Servico{
     return this->completo;
   }
   Servico();
+  ~Servico();
 };
 
 #endif

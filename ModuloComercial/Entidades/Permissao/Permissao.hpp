@@ -11,7 +11,7 @@ class Permissao{
   public:
     int getID();
     Permissao(int);  
-    Permissao();
+    //Permissao();
 };
 
 class Permissoes{

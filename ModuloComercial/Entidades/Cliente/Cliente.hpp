@@ -24,7 +24,7 @@ class Cliente : public Usuario {
     std::string GetNome(Permissoes);
     void SetNome(std::string, Permissoes);
     bool GetInadimplente(Permissoes);
-    void SetInadimplente(bool, Permissoes);
+    //void SetInadimplente(bool, Permissoes);
     std::string GetCpfCnpj(Permissoes);
     void SetCpfCnpj(std::string, Permissoes);
     int GetStatus(Permissoes);
@@ -43,8 +43,8 @@ class Cliente : public Usuario {
     void DecrementaQtdFaturasNPagas(Permissoes);
     int GetQtdFaturasNPagas(Permissoes);
     bool PossuiPermissao(int, Permissoes);
-    bool AdicionaPermissao(int, Permissoes);
-    bool RetiraPermissao(int, Permissoes);
+    void AdicionaPermissao(int, Permissoes);
+    void RetiraPermissao(int, Permissoes);
     std::string PagarFatura(Endereco, std::string, Permissoes);
     std::string CadastrarUC(std::string _tipo,Endereco _endereco, Permissoes _permissoes);
     void DesativarUC(Endereco, Permissoes);

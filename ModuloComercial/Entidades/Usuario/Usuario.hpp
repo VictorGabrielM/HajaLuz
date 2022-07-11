@@ -7,7 +7,7 @@
 class Usuario{
   public:
     Permissoes PermUser;
-    Usuario();
+    //Usuario();
   protected:
     std::string nome;
     int status;

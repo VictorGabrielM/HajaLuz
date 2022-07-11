@@ -22,8 +22,9 @@ std::string Medicao::FinalizaServico(){
   this->completo = true;
   this->dataConclusao = this->dataConclusao.dateNow();
   this->cliente->IncrementaQtdFaturasNPagas(this->cliente->PermUser);
-  if(cliente->GetQtdFaturasNPagas(this->cliente->PermUser) >= 4 ){
-    Sistema::DesligamentoInadimplencia(this->endereco,this->cliente->GetCpfCnpj(this->cliente->PermUser));
+  /*if(cliente->GetQtdFaturasNPagas(this->cliente->PermUser) >= 4 ){
+    //Sistema::DesligamentoInadimplencia(this->endereco,this->cliente->GetCpfCnpj(this->cliente->PermUser));
   }
+  */
   return "Medição no local";
 }

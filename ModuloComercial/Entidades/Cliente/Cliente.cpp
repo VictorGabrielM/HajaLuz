@@ -141,18 +141,34 @@ void Cliente::IncrementaQtdFaturasNPagas(Permissoes _permissoes){
   this->qtdFaturasNaoPagas ++;
 }
 
+void Cliente::DecrementaQtdFaturasNPagas(Permissoes _permissoes){
+  this->qtdFaturasNaoPagas --;
+}
+
+int Cliente::GetQtdFaturasNPagas(Permissoes _permissoes){
+  return this->qtdFaturasNaoPagas;
+}
+
 void Cliente::setUnidadesConsumidoras(std::vector<UnidadeConsumidora> _UnidadesConsumidoras, Permissoes _permissoes){
   this->UnidadesConsumidoras = _UnidadesConsumidoras;
 }
 
 bool Cliente::PossuiPermissao(int _ID, Permissoes _permissoes){
-  this->PermUser.Possui(_ID);
+  return this->PermUser.Possui(_ID);
 }
 
-bool Cliente::AdicionaPermissao(int _ID, Permissoes _permissoes){
+void Cliente::AdicionaPermissao(int _ID, Permissoes _permissoes){
   this->PermUser.AdicionarPermissao(_ID);
 }
 
-bool Cliente::RetiraPermissao(int _ID, Permissoes _permissoes){
+void Cliente::RetiraPermissao(int _ID, Permissoes _permissoes){
   this->PermUser.RetirarPermissao(_ID);
+}
+
+std::string Cliente::GetNumeroTel(Permissoes _permissoes){
+  return this->telefone;
+}
+
+void Cliente::SetNumeroTel(std::string _telefone, Permissoes _permissoes){
+  this->telefone = _telefone;
 }
